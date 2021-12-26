@@ -32,7 +32,21 @@ describe('Test parseXml', () => {
 
   it('test getValidChildBlocks', () => {
     expect(
-      getValidChildBlocks(BasicType.SECTION).map((item) => item.type)
-    ).toEqual([BasicType.COLUMN, BasicType.GROUP, BasicType.RAW]);
+getValidChildBlocks(BasicType.SECTION).map((item) => item.type)).
+toMatchInlineSnapshot(`
+Array [
+  "advanced_text",
+  "advanced_button",
+  "advanced_image",
+  "advanced_divider",
+  "advanced_spacer",
+  "advanced_navbar",
+  "advanced_accordion",
+  "advanced_carousel",
+  "column",
+  "group",
+  "raw",
+]
+`);
   });
 });

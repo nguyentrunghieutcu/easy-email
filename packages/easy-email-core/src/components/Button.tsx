@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IButton } from '@core/blocks/Button';
+import { IButton } from '@core/blocks/standard/Button';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type ButtonProps = RecursivePartial<IButton['data']> &

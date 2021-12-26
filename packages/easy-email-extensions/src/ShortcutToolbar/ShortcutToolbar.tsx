@@ -1,4 +1,4 @@
-import { BasicType } from 'easy-email-core';
+import { AdvancedType, BasicType } from 'easy-email-core';
 import { IconFont, Stack, BlockAvatarWrapper } from 'easy-email-editor';
 import React, { useRef } from 'react';
 import { BlocksPanel } from './components/BlocksPanel';
@@ -47,34 +47,8 @@ export function ShortcutToolbar() {
           }}
         />
       </BlockAvatarWrapper>
-      <BlockAvatarWrapper payload={{
-        children: [
-          {
-            type: 'column',
-            data: {
-              value: {},
-            },
-            attributes: {
-              padding: '0px 0px 0px 0px',
-              border: 'none',
-              'vertical-align': 'top',
-
-            },
-          },
-          {
-            type: 'column',
-            data: {
-              value: {},
-            },
-            attributes: {
-              padding: '0px 0px 0px 0px',
-              border: 'none',
-              'vertical-align': 'top',
-
-            },
-          }
-        ]
-      }} type={BasicType.SECTION}>
+      <BlockAvatarWrapper
+        type={AdvancedType.ROW}>
         <IconFont
           title='Section'
           iconName='icon-section'

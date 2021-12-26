@@ -2,7 +2,7 @@ import mjml from 'mjml-browser';
 import { IBlockData } from '@core/typings';
 import { BlockType, BasicType } from './../constants';
 import { MjmlToJson } from './MjmlToJson';
-import { BlockManager } from '@core/utils';
+import { BlockManager } from './BlockManager';
 
 const domParser = new DOMParser();
 export function parseXMLtoBlock(text: string) {

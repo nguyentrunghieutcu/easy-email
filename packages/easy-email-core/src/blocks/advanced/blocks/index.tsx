@@ -1,48 +1,49 @@
 
-import { IButton, ICarousel, IDivider, IImage, INavbar, ISpacer, IText } from '@core';
-import { IAccordion } from '@core/blocks/Accordion';
+import { IButton, ICarousel, IDivider, IImage, INavbar, ISpacer, IText, IAccordion } from '../../standard';
 import { AdvancedType, BasicType } from '@core/constants';
-import { generateAdvancedBlock } from '../generateAdvancedBlock';
+import { generateAdvancedContentBlock } from '../generateAdvancedContentBlock';
 
-export const AdvancedText = generateAdvancedBlock<IText>({
+export const AdvancedText = generateAdvancedContentBlock<IText>({
   type: AdvancedType.TEXT,
   baseType: BasicType.TEXT
 });
 
-export const AdvancedButton = generateAdvancedBlock<IButton>({
+export const AdvancedButton = generateAdvancedContentBlock<IButton>({
   type: AdvancedType.BUTTON,
   baseType: BasicType.BUTTON
 });
 
-export const AdvancedImage = generateAdvancedBlock<IImage>({
+export const AdvancedImage = generateAdvancedContentBlock<IImage>({
   type: AdvancedType.IMAGE,
   baseType: BasicType.IMAGE
 });
 
-export const AdvancedDivider = generateAdvancedBlock<IDivider>({
+export const AdvancedDivider = generateAdvancedContentBlock<IDivider>({
   type: AdvancedType.DIVIDER,
   baseType: BasicType.DIVIDER
 });
 
-export const AdvancedSpacer = generateAdvancedBlock<ISpacer>({
+export const AdvancedSpacer = generateAdvancedContentBlock<ISpacer>({
   type: AdvancedType.SPACER,
   baseType: BasicType.SPACER
 });
 
 
-export const AdvancedNavbar = generateAdvancedBlock<INavbar>({
+export const AdvancedNavbar = generateAdvancedContentBlock<INavbar>({
   type: AdvancedType.NAVBAR,
   baseType: BasicType.NAVBAR
 });
 
-export const AdvancedAccordion = generateAdvancedBlock<IAccordion>({
+export const AdvancedAccordion = generateAdvancedContentBlock<IAccordion>({
   type: AdvancedType.ACCORDION,
   baseType: BasicType.ACCORDION
 });
 
 
-export const AdvancedCarousel = generateAdvancedBlock<ICarousel>({
+export const AdvancedCarousel = generateAdvancedContentBlock<ICarousel>({
   type: AdvancedType.CAROUSEL,
   baseType: BasicType.CAROUSEL
 });
 
+
+export { Row as AdvancedRow } from './Row';

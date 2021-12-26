@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { ISection } from '@core/blocks/Section';
+import { ISection } from '@core/blocks/standard/Section';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type SectionProps = RecursivePartial<ISection['data']> &

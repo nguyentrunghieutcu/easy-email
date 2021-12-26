@@ -3,19 +3,19 @@ import { Column, Section, Template } from '@core/components';
 import { BasicType } from '@core/constants';
 import { IBlockData } from '@core/typings';
 import { getParentByIdx } from '@core/utils';
-import { BlockManager } from '@core/utils/BlockManager';
 import { classnames } from '@core/utils/classnames';
 import { createCustomBlock } from '@core/utils/createCustomBlock';
 import { getPreviewClassName } from '@core/utils/getPreviewClassName';
 import { merge } from 'lodash';
 import React from 'react';
+import { standardBlocks } from '..';
 
 
-export function generateAdvancedBlock<T extends IBlockData>(option: {
+export function generateAdvancedContentBlock<T extends IBlockData>(option: {
   type: string;
-  baseType: string;
+  baseType: keyof typeof standardBlocks;
 }) {
-  const baseBlock = BlockManager.getBlockByType(option.baseType)!;
+  const baseBlock = standardBlocks[option.baseType];
   return createCustomBlock<T>({
     name: baseBlock.name,
     type: option.type,

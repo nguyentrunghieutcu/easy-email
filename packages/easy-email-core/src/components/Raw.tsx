@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IRaw } from '@core/blocks/Raw';
+import { IRaw } from '@core/blocks/standard/Raw';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type RawProps = RecursivePartial<IRaw['data']> &

@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IText } from '@core/blocks/Text';
+import { IText } from '@core/blocks/standard/Text';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type TextProps = RecursivePartial<IText['data']> &

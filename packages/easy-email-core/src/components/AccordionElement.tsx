@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IAccordionElement } from '@core/blocks/AccordionElement';
+import { IAccordionElement } from '@core/blocks/standard/AccordionElement';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type AccordionElementProps = RecursivePartial<

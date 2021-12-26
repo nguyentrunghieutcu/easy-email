@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IDivider } from '@core/blocks/Divider';
+import { IDivider } from '@core/blocks/standard/Divider';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type DividerProps = RecursivePartial<IDivider['data']> &

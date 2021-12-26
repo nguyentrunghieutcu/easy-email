@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IImage } from '@core/blocks/Image';
+import { IImage } from '@core/blocks/standard/Image';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type ImageProps = RecursivePartial<IImage['data']> &

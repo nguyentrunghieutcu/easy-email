@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { ISocial } from '@core/blocks/Social';
+import { ISocial } from '@core/blocks/standard/Social';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type SocialProps = RecursivePartial<ISocial['data']> &

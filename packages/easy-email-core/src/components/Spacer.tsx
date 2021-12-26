@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { ISpacer } from '@core/blocks/Spacer';
+import { ISpacer } from '@core/blocks/standard/Spacer';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type SpacerProps = RecursivePartial<ISpacer['data']> &

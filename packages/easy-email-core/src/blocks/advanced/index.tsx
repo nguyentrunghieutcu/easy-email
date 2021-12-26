@@ -1,9 +1,8 @@
 import { AdvancedType } from '@core/constants';
-import { BlockManager } from '@core/utils/BlockManager';
-import { AdvancedText, AdvancedButton, AdvancedImage, AdvancedDivider, AdvancedSpacer, AdvancedNavbar, AdvancedAccordion, AdvancedCarousel } from './blocks';
+import { AdvancedText, AdvancedButton, AdvancedImage, AdvancedDivider, AdvancedSpacer, AdvancedNavbar, AdvancedAccordion, AdvancedCarousel, AdvancedRow } from './blocks';
+import { IRow } from './blocks/Row';
 
-
-BlockManager.registerBlocks({
+export const advancedBlocks = {
   [AdvancedType.TEXT]: AdvancedText,
   [AdvancedType.BUTTON]: AdvancedButton,
   [AdvancedType.IMAGE]: AdvancedImage,
@@ -12,4 +11,12 @@ BlockManager.registerBlocks({
   [AdvancedType.NAVBAR]: AdvancedNavbar,
   [AdvancedType.ACCORDION]: AdvancedAccordion,
   [AdvancedType.CAROUSEL]: AdvancedCarousel,
-});
+  [AdvancedType.CAROUSEL]: AdvancedCarousel,
+  //
+  [AdvancedType.ROW]: AdvancedRow,
+};
+
+
+export type {
+  IRow
+};

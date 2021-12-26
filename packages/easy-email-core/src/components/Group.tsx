@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IGroup } from '@core/blocks/Group';
+import { IGroup } from '@core/blocks/standard/Group';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type GroupProps = RecursivePartial<IGroup['data']> &

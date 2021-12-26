@@ -1,8 +1,8 @@
 import { IBlock, IBlockData } from '@core/typings';
-import { blocks } from '@core/blocks';
+import { advancedBlocks, standardBlocks } from '@core/blocks';
 
 export class BlockManager {
-  private static blocksMap = { ...blocks };
+  private static blocksMap = { ...advancedBlocks, ...standardBlocks };
   private static autoCompletePath: { [key: string]: Array<string[]>; } = {};
 
   private static setAutoCompletePath() {

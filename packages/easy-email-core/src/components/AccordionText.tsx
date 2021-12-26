@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IAccordionText } from '@core/blocks/AccordionText';
+import { IAccordionText } from '@core/blocks/standard/AccordionText';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type AccordionTextProps = RecursivePartial<IAccordionText['data']> &

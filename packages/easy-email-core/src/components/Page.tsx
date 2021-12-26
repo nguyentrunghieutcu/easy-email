@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { IPage } from '@core/blocks/Page';
+import { IPage } from '@core/blocks/standard/Page';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type PageProps = RecursivePartial<IPage['data']> &

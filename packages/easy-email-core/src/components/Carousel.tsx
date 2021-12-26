@@ -2,7 +2,7 @@ import { omit } from 'lodash';
 import { BasicType } from '@core/constants';
 import { RecursivePartial } from '@core/typings';
 import React from 'react';
-import { ICarousel } from '@core/blocks/Carousel';
+import { ICarousel } from '@core/blocks/standard/Carousel';
 import MjmlBlock from '@core/components/MjmlBlock';
 
 export type CarouselProps = RecursivePartial<ICarousel['data']> &
