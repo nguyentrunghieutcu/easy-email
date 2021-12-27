@@ -2,7 +2,7 @@
   display: block !important;
 }
 
-[data-dashed='true'] .email-block {
+[data-dashed="true"] .email-block {
   outline: 1px dashed rgba(170, 170, 170, 0.7);
   outline-offset: -2px;
 }
@@ -26,6 +26,6 @@
   outline: none;
 }
 
-[contenteditable='true'] {
+[contenteditable="true"] {
   outline: none;
 }

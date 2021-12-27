@@ -220,6 +220,12 @@ export function JsonToMjml(options: JsonToMjmlOption): string {
                ${children || `<mj-column>${placeholder}</mj-column>`}
               </mj-group>
             `;
+    case BasicType.IMAGE:
+      if (isTest && data.attributes.src === '') {
+        return `<mj-text ${attributeStr}>${placeholder}</mj-text>`;
+      };
+      return `<mj-image ${attributeStr}></mj-image>`;
+
     case BasicType.WRAPPER:
       return `
               <mj-wrapper ${attributeStr}>
@@ -305,6 +311,13 @@ export function renderPlaceholder(type: string) {
     text = 'Drop a Column block here';
   } else if (type === BasicType.COLUMN) {
     text = 'Drop a content block here';
+  } else if (type === BasicType.IMAGE) {
+    return `
+      <div style="height:80px;border: 2px dashed #8C9196;border-radisu:4px;display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;">
+          <div class="iconfont icon-add" style="font-size:20px;cursor:pointer;"></div>
+          <div style="cursor:pointer;">or drop files to upload</div>
+      </div>
+    `;
   }
 
   return `

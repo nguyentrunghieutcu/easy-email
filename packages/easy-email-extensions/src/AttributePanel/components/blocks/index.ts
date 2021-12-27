@@ -19,7 +19,8 @@ import { Hero } from './Hero';
 import { Navbar } from './Navbar';
 import { Social } from './Social';
 import { Table } from './Table';
-import { BasicType } from 'easy-email-core';
+import { AdvancedType, BasicType } from 'easy-email-core';
+import { Row } from './Row';
 
 export const blocks = {
   [BasicType.PAGE]: Page,
@@ -42,4 +43,7 @@ export const blocks = {
   [BasicType.NAVBAR]: Navbar,
   [BasicType.SOCIAL]: Social,
   [BasicType.TABLE]: Table,
+
+  //
+  [AdvancedType.ROW]: Row,
 };
