@@ -96,7 +96,10 @@ export function JsonToMjml(options: JsonToMjmlOption): string {
     const transformData = isValidElement(transformBlockData)
       ? parseReactBlockToBlockData(transformBlockData)
       : transformBlockData;
-    att['css-class'] = classnames(getPreviewClassName(idx, data.type), transformData?.['attributes']?.['css-class']);
+    att['css-class'] = classnames(
+      getPreviewClassName(idx, data.type),
+      transformData?.['attributes']?.['css-class']
+    );
     return JsonToMjml({
       data: {
         ...transformData,
