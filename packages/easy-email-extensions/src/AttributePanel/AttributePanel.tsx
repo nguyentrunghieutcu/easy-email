@@ -17,6 +17,7 @@ import { Uploader, UploadItem } from './utils/Uploader';
 import { Message } from '@arco-design/web-react';
 import { previewLoadImage } from './utils/previewLoadImage';
 import { get } from 'lodash';
+import { IBlockData } from 'easy-email-core';
 
 export interface AttributePanelProps { }
 
@@ -48,6 +49,15 @@ export function AttributePanel() {
   useEffect(() => {
     if (initialized) {
       let isUpload = false;
+
+      const checkBlockExist = (idx: string) => {
+        const block = get(valuesRef.current, idx) as IBlockData | undefined;
+        if (block && block.type === BasicType.IMAGE) {
+          return true;
+        };
+        return false;
+      };
+
       const onClick = (ev: Event) => {
         if (isUpload) return;
         if (ev.target instanceof HTMLElement) {
@@ -74,7 +84,10 @@ export function AttributePanel() {
               try {
                 await previewLoadImage(picture);
                 Message.clear();
-                change(idx + '.attributes.src', picture);
+                if (checkBlockExist(idx)) {
+                  change(idx + '.attributes.src', picture);
+                }
+
                 isUpload = false;
               } catch (error: any) {
                 isUpload = false;
@@ -116,7 +129,9 @@ export function AttributePanel() {
             const picture = await onUploadImage(blob);
             await previewLoadImage(picture);
             Message.clear();
-            change(idx + '.attributes.src', picture);
+            if (checkBlockExist(idx)) {
+              change(idx + '.attributes.src', picture);
+            }
             isUpload = false;
           } catch (error: any) {
             isUpload = false;
