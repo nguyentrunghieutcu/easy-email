@@ -19,7 +19,7 @@ export function generateAdvancedContentBlock<T extends IBlockData>(option: {
   return createCustomBlock<T>({
     name: baseBlock.name,
     type: option.type,
-    validParentType: [BasicType.PAGE, BasicType.WRAPPER, BasicType.SECTION, BasicType.GROUP, BasicType.COLUMN],
+    validParentType: [BasicType.PAGE, BasicType.WRAPPER, BasicType.COLUMN, BasicType.GROUP],
     create: (payload) => {
       const defaultData = {
         ...baseBlock.create(),
@@ -49,9 +49,6 @@ export function generateAdvancedContentBlock<T extends IBlockData>(option: {
       }
       if (parentBlockData.type === BasicType.PAGE || parentBlockData.type === BasicType.WRAPPER) {
         return <Section padding="0px"><Column>{content}</Column></Section>;
-      }
-      if (parentBlockData.type === BasicType.SECTION) {
-        return <Column>{content}</Column>;
       }
 
       return content;

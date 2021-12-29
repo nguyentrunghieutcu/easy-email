@@ -1,12 +1,11 @@
-
-import { IColumn } from '@core/blocks/standard';
-import { Column, Section } from '@core/components';
+import { Section, Template } from '@core/components';
 import { AdvancedType, BasicType } from '@core/constants';
 import { IBlockData } from '@core/typings';
 import { createCustomBlock } from '@core/utils/createCustomBlock';
 import { merge } from 'lodash';
 import React from 'react';
 import { CSSProperties } from 'react';
+import { Column as ColumnBlock } from '../../standard/Column';
 
 
 export type IRow = IBlockData<
@@ -28,7 +27,6 @@ export type IRow = IBlockData<
   },
   {
     noWrap: boolean,
-    columns: IColumn[],
   }
 >;
 
@@ -41,9 +39,6 @@ export const Row = createCustomBlock<IRow>({
       data: {
         value: {
           noWrap: false,
-          columns: [
-
-          ],
         },
       },
       attributes: {
@@ -61,12 +56,19 @@ export const Row = createCustomBlock<IRow>({
   },
   render(data, idx, mode, context) {
     const attributes = data.attributes;
-    const value = data.data.value;
-    return <Section {...attributes}>
-      {
-        value.columns.map((column, index) => <Column key={index} {...column.attributes} value={column.data.value}></Column>)
-      }
-    </Section>;
+    return (
+      <Section {...attributes}>
+        <Template idx={idx} value={{ idx }}>
+          {
+            data.children
+          }
+        </Template>
+      </Section>
+    );
+
+
   },
   validParentType: [BasicType.PAGE, BasicType.WRAPPER],
 });
+
+ColumnBlock.validParentType.push(Row.type);
