@@ -68,7 +68,7 @@ export default function enhancer<P, C extends (...rest: any[]) => any = any>(
           maxWait: 500,
         }
       ),
-      []
+      [onChange]
     );
 
     useEffect(() => {
