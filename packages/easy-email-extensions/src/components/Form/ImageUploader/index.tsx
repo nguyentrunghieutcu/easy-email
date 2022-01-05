@@ -19,6 +19,7 @@ import { getImg } from '@extensions/AttributePanel/utils/getImg';
 import { MergeTags } from '@extensions';
 import { Button as ArcoButton } from '@arco-design/web-react';
 import { IconFont, useEditorProps } from 'easy-email-editor';
+import { ImageCrop, useImageCrop } from '@extensions/components/ImageCrop';
 
 export interface ImageUploaderProps {
   onChange: (val: string) => void;
@@ -28,6 +29,7 @@ export interface ImageUploaderProps {
 }
 
 export function ImageUploader(props: ImageUploaderProps) {
+  const { openModal: openImageCropModal, ...cropProps } = useImageCrop();
   const { mergeTags } = useEditorProps();
   const [isUploading, setIsUploading] = useState(false);
   const [preview, setPreview] = useState(false);
@@ -46,6 +48,12 @@ export function ImageUploader(props: ImageUploaderProps) {
     const uploader = new Uploader(uploadHandlerRef.current, {
       limit: 1,
       accept: 'image/*',
+      autoUpload: false,
+    });
+
+    uploader.on('choose', (files: File[]) => {
+      const [file] = files;
+      openImageCropModal(file, (file) => uploader.uploadFiles([file as File]));
     });
 
     uploader.on('start', (photos) => {
@@ -165,6 +173,7 @@ export function ImageUploader(props: ImageUploaderProps) {
       <Modal visible={preview} footer={null} onCancel={() => setPreview(false)}>
         <img alt='Preview' style={{ width: '100%' }} src={props.value} />
       </Modal>
+      <ImageCrop {...cropProps} />
     </div>
   );
 }

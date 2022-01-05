@@ -1,0 +1,17 @@
+.imageCrop {
+  :global {
+    .arco-modal-header {
+      background-color: #fff;
+    }
+    .arco-modal-content {
+      background-color: rgba(0, 0, 0, 0.1);
+      padding: 0;
+      height: calc(100vh - 50px) !important;
+      width: 100vw !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+  }
+}

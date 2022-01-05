@@ -19,6 +19,7 @@ export type UploadItem = {
 };
 
 export type UploaderEventMap = {
+  choose: (files: File[]) => void;
   start: (data: UploadItem[]) => void;
   progress: (data: UploadItem[]) => void;
   end: (data: UploadItem[]) => void;
@@ -35,6 +36,7 @@ export class Uploader {
   private el: HTMLInputElement;
   private uploadServer: UploaderServer;
   private handler: UploaderEventMapHandle = {
+    choose: [],
     start: [],
     progress: [],
     end: [],
@@ -162,6 +164,7 @@ export class Uploader {
         return;
       }
       this.checkFile(files);
+      this.handler.choose.map((fn) => fn(files));
       if (this.options.autoUpload) {
         this.uploadFiles(files);
       }
