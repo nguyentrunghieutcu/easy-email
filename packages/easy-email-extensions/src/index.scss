@@ -2,14 +2,17 @@
   .easy-email-editor-tabWrapper {
     background-color: var(--color-bg-3);
   }
+
   .arco-layout {
     background-color: var(--color-bg-3);
   }
+
   .easy-email-editor-button {
     background-color: var(--color-secondary);
     color: var(--color-text-2);
     border: 1px solid transparent;
   }
+
   .easy-email-editor-button:hover {
     border-color: var(--color-neutral-4);
     color: var(--color-text-2);
@@ -21,9 +24,14 @@
     color: var(--color-text-2);
     border: 1px solid transparent;
   }
+
   .easy-email-editor-button[disabled]:hover {
     background-color: var(--color-secondary);
     color: var(--color-text-2);
     border: 1px solid transparent;
   }
+}
+
+body {
+  font-family: Roboto, sans-serif !important;
 }

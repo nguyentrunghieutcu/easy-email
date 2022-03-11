@@ -20,24 +20,8 @@ export function Page() {
   return (
     <AttributesPanelWrapper style={{ padding: 0 }}>
       <Stack.Item fill>
-        <Collapse defaultActiveKey={['0', '1']}>
-          <Collapse.Item name='0' header='Email Setting'>
-            <Space direction='vertical'>
-              <TextField label='Subject' name={'subject'} inline />
-              <TextField label='SubTitle' name={'subTitle'} inline />
-              <InputWithUnitField
-                label='Width'
-                name={`${focusIdx}.attributes.width`}
-                inline
-              />
-              <InputWithUnitField
-                label='Breakpoint'
-                helpText='Allows you to control on which breakpoint the layout should go desktop/mobile.'
-                name={`${focusIdx}.data.value.breakpoint`}
-                inline
-              />
-            </Space>
-          </Collapse.Item>
+        <Collapse defaultActiveKey={['0']}>
+
           <Collapse.Item name='1' header='Theme Setting'>
             <Stack vertical spacing='tight'>
               <Grid.Row>

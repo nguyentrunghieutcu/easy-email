@@ -10,6 +10,7 @@ import styles from './index.module.scss';
 import enUS from '@arco-design/web-react/es/locale/en-US';
 import MergeTagBadge from '@extensions/MergeTagBadge';
 import { IconLeft, IconRight } from '@arco-design/web-react/icon';
+import { TagsPanel } from '@extensions/TagsPanel';
 
 export const SimpleLayout: React.FC<
   {
@@ -18,7 +19,7 @@ export const SimpleLayout: React.FC<
   } & BlockLayerProps
 > = (props) => {
   const { height: containerHeight } = useEditorProps();
-  const { showSourceCode = true, defaultShowLayer = true } = props;
+  const { showSourceCode = false, defaultShowLayer = true } = props;
   const [collapsed, setCollapsed] = useState(!defaultShowLayer);
   return (
     <ConfigProvider locale={enUS}>
@@ -104,6 +105,9 @@ export const SimpleLayout: React.FC<
                   <SourceCodePanel />
                 </Tabs.TabPane>
               )}
+              <Tabs.TabPane key='tags' title={<div style={{ height: 31, lineHeight: '31px' }}>Tags</div>}>
+                <TagsPanel />
+              </Tabs.TabPane>
             </Tabs>
           </Card>
         </Layout.Sider>
