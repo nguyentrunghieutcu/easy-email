@@ -7,7 +7,8 @@ import {
   getTdBoundaryIndex,
   getBoundaryRectAndElement,
 } from './util';
-import { AdvancedTableBlock } from '@core/blocks/advanced/generateAdvancedTableBlock';
+
+import { AdvancedTableBlock } from 'easy-email-core';
 
 interface IBorderTool {
   top: Element;
@@ -130,7 +131,7 @@ class TableColumnTool {
       'background-color': 'rgb(65, 68, 77)',
       left: `${left}px`,
       top: `${top}px`,
-      width: `2px`,
+      width: '2px',
       height: `${Math.abs(height)}px`,
       position: 'absolute',
       'z-index': 10,
@@ -139,7 +140,7 @@ class TableColumnTool {
       'background-color': 'rgb(65, 68, 77)',
       left: `${left + width}px`,
       top: `${top}px`,
-      width: `2px`,
+      width: '2px',
       height: `${Math.abs(height)}px`,
       position: 'absolute',
       'z-index': 10,

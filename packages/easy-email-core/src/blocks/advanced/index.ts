@@ -25,6 +25,10 @@ import {
   AdvancedTable,
 } from './blocks';
 
+export type { ITableData, AdvancedTableBlock } from './generateAdvancedTableBlock';
+
+export { generateAdvancedTableBlock } from './generateAdvancedTableBlock';
+
 export const advancedBlocks = {
   [AdvancedType.TEXT]: AdvancedText,
   [AdvancedType.BUTTON]: AdvancedButton,
